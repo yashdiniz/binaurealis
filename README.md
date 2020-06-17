@@ -1,7 +1,9 @@
-# Todo.txt
+# Binaurealis
+
+## Todo.txt
 
 2020-05-27 Draft a basic README
-2020-05-27 Possibly shift this whole project to React for learning React?
+2020-05-27 Possibly build this whole project in React for learning React?
 
 ## Current design idea
 
