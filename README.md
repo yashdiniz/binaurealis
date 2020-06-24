@@ -44,8 +44,11 @@ Sound API should be run over function wrappers for ease of functionality, and ch
     (multiple sources, add as required)              |
 ```
 
+The concept of audio routing graphs with various nodes(sources and sinks) perfectly fits the description for compatibility with React components and can easily make for a nice application. Let's see how this goes!
+
 ## References
 
 1. [Types of brain waves and induction](https://itsusync.com/different-types-of-brain-waves-delta-theta-alpha-beta-gamma-ezp-9)
 2. [Binaural recordings](https://en.wikipedia.org/wiki/Binaural_recording)
 3. [Using Web-Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+4. [ReactJS tutorial](https://reactjs.org/tutorial/tutorial.html)
