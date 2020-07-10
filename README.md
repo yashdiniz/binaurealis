@@ -2,7 +2,7 @@
 
 ## Todo.txt
 
-2020-05-27 Draft a basic README
+2020-05-27 Convert the graph in implementation section, into an image.
 2020-05-27 Possibly build this whole project in React for learning React?
 
 ## Current design idea
