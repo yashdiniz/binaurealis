@@ -1,2 +1,5 @@
 # ignore the VScode workspace
 *.code-workspace
+
+# ignore the diagrams
+*.drawio
