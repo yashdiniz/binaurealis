@@ -36,15 +36,18 @@ Driven by speculation, a will to experiment the possible benefits of binaural so
 React components. Loads and loads of React Components. Each of them seamlessly fused together.
 Sound API should be run over function wrappers for ease of functionality, and channel integrations should happen as follows:
 
-``` text/plain
-    source: oscillator L -> Panner\
-                                    => Source Gain =>|
-            oscillator R -> Panner/                  | => Common Gain => Destination.
-                                                     |
-    (multiple sources, add as required)              |
-```
+![The audio graph implementation](./audioGraph.png)
 
 The concept of audio routing graphs with various nodes(sources and sinks) perfectly fits the description for compatibility with React components and can easily make for a nice application. Let's see how this goes!
+
+## Lookup Table
+
+| Frequency range | Name | Usually associated with |
+| > 40 Hz | Gamma waves | Higher mental activity, including perception, problem solving, and consciousness |
+| 13–39 Hz | Beta waves | Active, busy thinking, active processing , active concentration, arousal, and cognition |
+| 7–13 Hz | Alpha waves | Calm relaxed yet alert state |
+| 4–7 Hz | Theta waves | Deep meditation /relaxation, REM sleep |
+| < 4 Hz | Delta waves | Deep dreamless sleep, loss of body awareness |
 
 ## References
 
