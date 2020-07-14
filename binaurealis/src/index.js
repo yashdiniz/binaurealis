@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import AudioComponent from './components/audiocomponent';
+import { audioContext as context }  from './components/audioGraph';
 
 class App extends Component {
     constructor(props) {
@@ -10,17 +11,20 @@ class App extends Component {
             isPlaying: false
         };
     }
-    onPlayPress(event) {
-        
-        this.setState({ isPlaying: !this.state.isPlaying });
+    onPlay(event) {
+        this.setState({ isPlaying: !this.state.isPlaying },
+            () => this.state.isPlaying ? context.resume() : context.suspend()
+        );
     }
     render() {
         return (
             <div>
-                <button onClick={e => this.onPlayPress(e) }>
+                <button onClick={e => this.onPlay(e) }>
                     {this.state.isPlaying ? "Pause" : "Play"}
                 </button>
-                <AudioComponent gain={0.5} frequency={120} offset={-30} />
+                <AudioComponent 
+                    gain={0.5} frequency={120} offset={-30}
+                />
             </div>);
     }
 }
