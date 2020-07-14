@@ -38,16 +38,17 @@ class AudioGraph {
         beatNode.start();
     }
     updateOscillators(frequency, offset) {
+        frequency = parseInt(frequency); offset = parseInt(offset);
         if(frequency < 20) frequency = 20;
         else if(frequency > 20000) frequency = 20000;
         if(Math.abs(offset) > 60) offset = Math.sign(offset) * 60;
-        frequency = parseInt(frequency); offset = parseInt(offset);
         this.baseNode.frequency.value = frequency; // use a number input, in hertz
         this.beatNode.frequency.value = frequency + offset;  // use a range slider (+-60Hz)
     
         return {frequency, offset};
     }    
     changeGain(gain) {
+        gain = parseFloat(gain);
         if(gain < 0 || gain > 1) gain = 0.5;
         return this.gainNode.gain.value = gain;  // use a volume slider for the entire component
     }
