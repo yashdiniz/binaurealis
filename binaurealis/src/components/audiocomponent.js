@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AudioGraph } from './audioGraph';
+import { AudioGraph } from './AudioGraph';
 
 class AudioComponent extends Component {
     constructor(props) {
@@ -35,7 +35,7 @@ class AudioComponent extends Component {
                 type="range" name="gain" 
                 min="0" max="1"
                 step="0.01" value={this.state.gain}
-                onChange={event => this.changeGain(event)}
+                onChange={this.changeGain.bind(this)}
             />
             <span>{this.state.gain}</span>
             <br/>
@@ -44,7 +44,7 @@ class AudioComponent extends Component {
                 type="number" name="frequency"
                 min="20" max="20000"
                 value={this.state.frequency}
-                onChange={event => this.changeFrequency(event)}
+                onChange={this.changeFrequency.bind(this)}
             />
             <br/>
             <label>Offset</label>
