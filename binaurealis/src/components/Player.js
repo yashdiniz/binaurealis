@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import AudioComponent from './AudioComponent';
-import { audioContext as context }  from './AudioGraph';
+import AudioComponentList from './AudioComponentList';
+import { audioContext as context, audioContext }  from './AudioGraph';
 
 class Player extends Component {
     constructor(props) {
@@ -15,15 +16,37 @@ class Player extends Component {
             () => this.state.isPlaying ? context.resume() : context.suspend()
         );
     }
+    stopPlay() {
+        audioContext.suspend(); // invoke in case of error
+        this.setState({ isPlaying: false });
+    }
     render() {
         return (
             <div>
-                <button onClick={this.onPlay.bind(this)}>
-                    {this.state.isPlaying ? "Pause" : "Play"}
+                <button 
+                    className="frui-btn frui-btn--primary frui-btn--large"
+                    onClick={this.onPlay.bind(this)}
+                >
+                    {
+                        this.state.isPlaying ? 
+                        "Pause" : // <i class="fa fa-pause"/> : 
+                        "Play" // <i class="fa fa-play"/>
+                    }
                 </button>
-                <AudioComponent 
-                    gain={0.5} frequency={120} offset={-30}
-                />
+                <AudioComponentList>
+                    {
+                        [
+                            <AudioComponent 
+                            gain={0.3} frequency={120} offset={30}
+                            stopPlay={this.stopPlay.bind(this)}
+                        />,
+                        <AudioComponent 
+                            gain={0.2} frequency={440} offset={-20}
+                            stopPlay={this.stopPlay.bind(this)}
+                        />
+                        ]
+                    }
+                </AudioComponentList>
             </div>);
     }
 }
