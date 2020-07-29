@@ -42,10 +42,9 @@ class AudioComponent extends Component {
         >
             <div style={{'padding':'20px'}}>
             <label htmlFor={'gain'}>
-                Volume
-                <br/>
-                {this.state.gain}
+                Volume: {this.state.gain}
             </label>
+            <br/>
             <input 
                 type="range" name="gain" 
                 min="0" max="1"
@@ -57,6 +56,7 @@ class AudioComponent extends Component {
             </div>
             <div style={{'padding':'20px'}}>
             <label htmlFor={'frequency'}>Base Frequency</label>
+            <br/>
             <input
                 type="number" name="frequency"
                 min="20" max="20000"
@@ -67,10 +67,9 @@ class AudioComponent extends Component {
             </div>
             <div style={{'padding':'20px'}}>
             <label htmlFor={'offset'}>
-                Offset 
-                <br/>
-                {this.state.offset}
+                Offset: {this.state.offset}
             </label>
+            <br/>
             <input 
                 type="range" name="offset"
                 min="-60" max="60" 
