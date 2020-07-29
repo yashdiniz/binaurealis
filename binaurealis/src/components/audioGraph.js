@@ -11,6 +11,7 @@
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioContext = new AudioContext();
 const destination = audioContext.destination;
+let initialised = false;    // flag to store singleton state init
 
 class AudioGraph {
     constructor() {
@@ -33,7 +34,10 @@ class AudioGraph {
         rPanner.connect(gainNode);
         gainNode.connect(destination);
         
-        audioContext.suspend(); // prevent the context from starting
+        if(!initialised) {
+            audioContext.suspend(); // prevent the context from starting
+            initialised = true;
+        } 
         baseNode.start();       // until a user action triggers it.
         beatNode.start();
     }
