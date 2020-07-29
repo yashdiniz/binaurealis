@@ -33,19 +33,15 @@ class Player extends Component {
                         "Play" // <i class="fa fa-play"/>
                     }
                 </button>
-                <AudioComponentList>
-                    {
-                        [
-                            <AudioComponent 
-                            gain={0.3} frequency={120} offset={30}
-                            stopPlay={this.stopPlay.bind(this)}
-                        />,
-                        <AudioComponent 
-                            gain={0.2} frequency={440} offset={-20}
-                            stopPlay={this.stopPlay.bind(this)}
-                        />
-                        ]
-                    }
+                <AudioComponentList stopPlay={this.stopPlay.bind(this)}>
+                    <AudioComponent 
+                        key={0} gain={0.3} frequency={120} offset={30}
+                        stopPlay={this.stopPlay.bind(this)}
+                    />,
+                    <AudioComponent 
+                        key={1} gain={0.2} frequency={440} offset={-20}
+                        stopPlay={this.stopPlay.bind(this)}
+                    />
                 </AudioComponentList>
             </div>);
     }
