@@ -13,6 +13,9 @@ class AudioComponent extends Component {
         this.state.context.updateOscillators(this.props.frequency, this.props.offset);    // default
         this.state.context.changeGain(this.props.gain);    // default
     }
+    // make sure the audio is initiated only by user action
+    componentDidMount() { this.props.stopPlay() }
+    componentWillUnmount() { this.props.stopPlay() }
     updateOscillators() {
         try {
             this.state.context.updateOscillators(this.state.frequency, this.state.offset);
