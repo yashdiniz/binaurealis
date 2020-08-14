@@ -45,12 +45,15 @@ The concept of audio routing graphs with various nodes(sources and sinks) perfec
 
 ## Lookup Table
 
-| Frequency range | Name | Usually associated with |
-| > 40 Hz | Gamma waves | Higher mental activity, including perception, problem solving, and consciousness |
-| 13–39 Hz | Beta waves | Active, busy thinking, active processing , active concentration, arousal, and cognition |
-| 7–13 Hz | Alpha waves | Calm relaxed yet alert state |
-| 4–7 Hz | Theta waves | Deep meditation /relaxation, REM sleep |
-| < 4 Hz | Delta waves | Deep dreamless sleep, loss of body awareness |
+Frequency range | Name | Usually associated with
+---: | :---: | :---
+>40 Hz | Gamma waves | Higher mental activity, including perception, problem solving, and consciousness
+13–39 Hz | Beta waves | Active, busy thinking, active processing , active concentration, arousal, and cognition
+7–13 Hz | Alpha waves | Calm relaxed yet alert state
+4–7 Hz | Theta waves | Deep meditation /relaxation, REM sleep
+<4 Hz | Delta waves | Deep dreamless sleep, loss of body awareness
+
+---
 
 ## References
 
