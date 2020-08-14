@@ -1,6 +1,5 @@
 /*
-    This file willl contain the code used to build a basic skeleton
-    of the frequency beat generator.
+    This file contains the code of the frequency beat generator.
     author: @yashdiniz;
     reference: MDN
 */
