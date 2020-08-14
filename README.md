@@ -4,8 +4,7 @@
 
 2020-07-29 Add input elements to FRUI.
 2020-07-29 Also center-align the buttons, and make the UI a little more appealing. Also add tooltips.
-2020-07-29 Write an enticing introduction to add to the HTML page and the README?
-2020-07-29 Fix the table in the README.
+2020-07-29 Write an enticing introduction to add to the HTML page and the README
 2020-07-29 Also find out about Git CI and add the React build pipeline to it.
 
 ## Current design idea
