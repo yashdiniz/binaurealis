@@ -8,12 +8,14 @@ class AudioComponent extends Component {
             gain: this.props.gain,
             frequency: this.props.frequency,
             offset: this.props.offset,
-            context: new AudioGraph()
+            context: new AudioGraph()   // couldn't use this.context
         };
         this.state.context.updateOscillators(this.props.frequency, this.props.offset);    // default
         this.state.context.changeGain(this.props.gain);    // default
     }
     // make sure the audio is initiated only by user action
+    // i.e. suspend audio when a new component is mounted,
+    // so that it starts ONLY when user presses play!
     componentDidMount() { this.props.stopPlay() }
     componentWillUnmount() { this.props.stopPlay() }
     updateOscillators() {
@@ -44,12 +46,12 @@ class AudioComponent extends Component {
         }}
         >
             <div style={{'padding':'20px'}}>
-            <label htmlFor={'gain'}>
+            <label>
                 Volume: {this.state.gain}
             </label>
             <br/>
             <input 
-                type="range" name="gain" 
+                type="range"
                 min="0" max="1"
                 style={{'margin': '5px'}}
                 step="0.01" value={this.state.gain}
@@ -58,10 +60,12 @@ class AudioComponent extends Component {
             <br/>
             </div>
             <div style={{'padding':'20px'}}>
-            <label htmlFor={'frequency'}>Base Frequency</label>
+            <label>
+                Base Frequency
+            </label>
             <br/>
             <input
-                type="number" name="frequency"
+                type="number"
                 min="20" max="20000"
                 style={{'margin': '5px'}}
                 value={this.state.frequency}
@@ -69,12 +73,12 @@ class AudioComponent extends Component {
             />
             </div>
             <div style={{'padding':'20px'}}>
-            <label htmlFor={'offset'}>
+            <label>
                 Offset: {this.state.offset}
             </label>
             <br/>
             <input 
-                type="range" name="offset"
+                type="range"
                 min="-60" max="60" 
                  style={{'margin': '5px'}}
                 step="1" value={this.state.offset}
