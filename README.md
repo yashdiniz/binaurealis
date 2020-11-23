@@ -1,5 +1,8 @@
 # Binaurealis
 
+> This is work in progress. Do not hesitate to check it out and get in touch with me!
+> You can become a contributor to this repository by making a pull request.
+
 ## Current design idea
 
 The following design idea just popped up in my head, and I will be jotting it down here for assisting me in any kind of future reference.
